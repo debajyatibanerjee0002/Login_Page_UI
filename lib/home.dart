@@ -1,13 +1,18 @@
+// 2
 import 'package:flutter/material.dart';
 import 'package:user_interface_1/Animation/FadeAnimation.dart';
 
+// create a stateless widget
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // create scaffold to provide structure
     return Scaffold(
+      // create a container
+      // this is the container which holds entire tree (main container #1)
       body: Container(
-        // padding: EdgeInsets.all(30),
         width: double.infinity,
+        // give the color of the container by using BoxDecoration widget
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -18,19 +23,28 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ),
+        // create a column widget
+        // this is the column which holds entire tree (main column #1)
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            // give a height sized box
             SizedBox(
               height: 20,
             ),
+            // give padding 
+            // this is the padding for "login page" and "welcome" text 
             Padding(
               padding: EdgeInsets.fromLTRB(5, 40, 20, 40),
+              // add a column for those "login page" and "welcome" text
+              // this column holes those "login page" and "welcome" text (column #2)
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
+                  // give some animation from Animation class
                   FadeAnimation(
                     1,
+                    // "login page" text
                     Text(
                       'Login Page ',
                       style: TextStyle(
@@ -44,8 +58,10 @@ class HomePage extends StatelessWidget {
                   SizedBox(
                     height: 10,
                   ),
+                  // same
                   FadeAnimation(
                     1.2,
+                    // "welcome" text
                     Text(
                       'Welcome !!',
                       style: TextStyle(
@@ -59,8 +75,13 @@ class HomePage extends StatelessWidget {
                 ],
               ),
             ),
+            // ^ end
+            // now create expanded widget 
             Expanded(
+              // create a container
+              // this is the container which holds entire tree (second main container #2)
               child: Container(
+                // give some decoration using Boxdecoration widget
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -68,14 +89,21 @@ class HomePage extends StatelessWidget {
                     bottomRight: Radius.circular(50),
                   ),
                 ),
+                // create SingleChildScrollView widget to avoid **button overflow
                 child: SingleChildScrollView(
+                  // give some padding
                   child: Padding(
                     padding: EdgeInsets.all(20),
+                    // create a column
+                    // this is the column which holds entire buttons and stuff (column #3)
                     child: Column(
                       children: <Widget>[
+                        // give some height using sized box
                         SizedBox(
                           height: 30,
                         ),
+                        // create a container 
+                        // this is the container which holds "email id" and "password" (container #3)
                         FadeAnimation(
                           1.4,
                           Container(
@@ -86,6 +114,7 @@ class HomePage extends StatelessWidget {
                                 bottomRight: Radius.circular(30),
                               ),
                               color: Colors.white,
+                              // craete a boxShadow property to give some shadow
                               boxShadow: [
                                 BoxShadow(
                                   color: Color.fromARGB(225, 10, 150, 30),
@@ -94,8 +123,12 @@ class HomePage extends StatelessWidget {
                                 ),
                               ],
                             ),
+                            // create a column
+                            // this is the column which holds "email id" and "password" (column #4)
                             child: Column(
                               children: <Widget>[
+                                // create a container
+                                // this is container which holds "email id" (container #4)
                                 Container(
                                   decoration: BoxDecoration(
                                     border: Border(
@@ -113,6 +146,9 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                 ),
+                                // ^ end
+                                // create a container
+                                // this is container which holds "passwoed" (container #5)
                                 Container(
                                   decoration: BoxDecoration(
                                     border: Border(
@@ -131,22 +167,29 @@ class HomePage extends StatelessWidget {
                                     obscureText: true,
                                   ),
                                 ),
+                                // ^ end
                               ],
                             ),
+                            // ^ end
                           ),
+                          // ^ end
                         ),
+                        // create a sized box to give some height space
                         SizedBox(
                           height: 30,
                         ),
+                        // create a "Forgot password?" text
                         FadeAnimation(
                           1.5,
                           Text(
                             'Forgot password?',
                           ),
                         ),
+                        // create a sized box to give some height space
                         SizedBox(
                           height: 30,
                         ),
+                        // create a botton for "log in"
                         FadeAnimation(
                           1.6,
                           FlatButton(
@@ -173,20 +216,26 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                         ),
+                        // ^ end
+                        // create a sized box to give some height space
                         SizedBox(
                           height: 30,
                         ),
+                        // create a "Continue with social media" text
                         FadeAnimation(
                           1.7,
                           Text(
                             'Continue with social media',
                           ),
                         ),
+                        // create a sized box to give some height space
                         SizedBox(
                           height: 40,
                         ),
+                        // create a row for two button "Facebook" and "GitHub"
                         Row(
                           children: <Widget>[
+                            // create a expanded widget for "Facebook" button
                             Expanded(
                               child: FadeAnimation(
                                 1.8,
@@ -213,9 +262,12 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            // ^ end
+                            // create a sized box to give some height space
                             SizedBox(
                               width: 20,
                             ),
+                            // create a expanded widget for "GitHub" button
                             Expanded(
                               child: FadeAnimation(
                                 1.9,
@@ -242,17 +294,27 @@ class HomePage extends StatelessWidget {
                                 ),
                               ),
                             ),
+                            // ^ end
                           ],
                         ),
+                        // ^ end
                       ],
                     ),
+                    // ^ end
                   ),
+                  // ^ end
                 ),
+                // ^ end
               ),
-            )
+              // ^ end
+            ),
+            // ^ end
           ],
         ),
+        // ^ end
       ),
+      // ^ end
+      //
       // floatingActionButton: FadeAnimation(
       //   2.0,
       //   FloatingActionButton(
